@@ -11,14 +11,16 @@ body {
 
 header {
     background-color: white;
+    margin: 40px;
+    padding: 70px 92px 35px 92px !important;
 }
 
-h1 {
-    font-weight: bold;
+.title {
     font-size: 20px;
+    font-weight: bold;
 }
 
-h2 {
+.subTitle {
     font-size: 22px;
     font-weight: bold;
     color: #01B4DC;
