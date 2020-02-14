@@ -12,7 +12,7 @@ body {
 
 header {
     background-color: white;
-    margin: 5% 10%;
+    margin: 5% 10% 0%;
     padding: 70px 92px 35px 92px !important;
 }
 
@@ -58,6 +58,31 @@ header {
     color: white !important;
 }
 
-section {
+.section1 {
     background-color: #F9F9F9;
+    margin: 0% 10%;
+    padding: 40px 92px 35px 92px !important;
+    border-top: 2px dotted;
+}
+
+.imgStemmenTrekker {
+    opacity: 0.7;
+    width: 48%;
+}
+
+.section1 > p {
+    opacity: 0.6;
+}
+
+.section2{
+    background-color: #01B4DC;
+    margin: 0% 10%;
+    padding: 20px 92px 35px 92px !important;
+    color: white;
+}
+
+.partijenPartner {
+    width: 173px;
+    height: 100%;
+    margin-top: 20px;
 }
