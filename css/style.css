@@ -2,6 +2,7 @@ body {
     background-image: url("../img/background.jpg");
     background-repeat: no-repeat;
     background-size: 100%;
+    background-attachment: fixed;
 }
 
 #logo {
@@ -11,7 +12,7 @@ body {
 
 header {
     background-color: white;
-    margin: 40px;
+    margin: 5% 10%;
     padding: 70px 92px 35px 92px !important;
 }
 
@@ -24,6 +25,33 @@ header {
     font-size: 22px;
     font-weight: bold;
     color: #01B4DC;
-    line-height: 1.3em;
-    padding: 1em 0;
+    line-height: 10px;
+    padding: 20px 0;
+    margin-bottom: 40px;
+}
+
+.rowContainer {
+    display: table;
+    padding-right: 300px;
+}
+
+.slotImage {
+    float: left;
+    width: 50px;
+}
+
+.slotText {
+    line-height: 45px;
+    padding-left: 20px;
+}
+
+.startBtn {
+    float: right;
+    margin-top: 7px;
+    width: 188px;
+    height: 68px;
+}
+
+.startBtn:hover {
+    background-color: ;
 }
