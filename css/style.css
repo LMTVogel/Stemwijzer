@@ -16,7 +16,7 @@ header {
     padding: 70px 92px 35px 92px !important;
 }
 
-.title {
+#title {
     font-size: 20px;
     font-weight: bold;
 }
@@ -32,16 +32,17 @@ header {
 
 .rowContainer {
     display: table;
-    padding-right: 300px;
+    padding-right: 400px;
+    margin-bottom: 32px;
 }
 
-.slotImage {
+.rowImage {
     float: left;
     width: 50px;
 }
 
-.slotText {
-    line-height: 45px;
+.rowText {
+    margin-top: 45px;
     padding-left: 20px;
 }
 
@@ -53,5 +54,10 @@ header {
 }
 
 .startBtn:hover {
-    background-color: ;
+    background-color: #018aa9 !important;
+    color: white !important;
+}
+
+section {
+    background-color: #F9F9F9;
 }
