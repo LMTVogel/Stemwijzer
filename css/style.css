@@ -86,3 +86,12 @@ header {
     height: 100%;
     margin-top: 20px;
 }
+
+.section3 {
+    float: left;
+}
+
+.boldText {
+    font-weight: bold;
+    font-size: 18px;
+}
