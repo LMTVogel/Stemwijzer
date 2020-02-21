@@ -86,3 +86,30 @@ header {
     height: 100%;
     margin-top: 20px;
 }
+
+.boldText {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.partij {
+    width: 45px;
+    height: 45px;
+    background-color: white;
+    border-radius: 50%;
+    float: left;
+    margin: 5px 5px 0 5px;
+}
+
+.imgFormat {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+
+.section3 {
+    background-color: #01B4DC;
+    margin: 0% 10%;
+    padding: 20px 92px 35px 92px !important;
+    color: white;
+}
