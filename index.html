@@ -120,7 +120,7 @@
                 <div id="progress" class="progressBar">
                 </div>
                 <div class="navigationBack w3-padding">
-                    <button onclick="" class="w3-light-grey w3-padding iconBack">
+                    <button onclick="previousStatement()" class="w3-light-grey w3-padding iconBack">
                         <img src="img/icon-arrow-back.svg" alt="">
                     </button>
                 </div>
@@ -130,12 +130,12 @@
                         <p id="stellingDes"></p>
                     </div>
                     <div class="w3-left">
-                        <button id="pro">Eens</button>
-                        <button id="none">Geen van beide</button>
-                        <button id="contra">Oneens</button>
+                        <button id="pro" onclick="saveAnswer('pro')">Eens</button>
+                        <button id="none" onclick="saveAnswer('none')">Geen van beide</button>
+                        <button id="contra" onclick="saveAnswer('contra')">Oneens</button>
                     </div>
                    
-                    <button id="noOpinion" class="hoverEffect w3-text-grey w3-right">Sla deze vraag over <i class="fa fa-arrow-right"></i></button>
+                    <button id="noOpinion" class="hoverEffect w3-text-grey w3-right" onclick="nextStatement()">Sla deze vraag over <i class="fa fa-arrow-right"></i></button>
                     <div class="w3-container">
                         <p class="partyCheckbox">Laat dit ondewerp zwaarder meetellen</p>
                         <input class="checkboxInput" id="important" type="checkbox">                
