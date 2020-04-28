@@ -32,18 +32,20 @@ function previousStatement() {
         vraagCounter--;
         document.getElementById('important').checked=false;
         displayVraag();
+        rememberAnswer(subjects[vraagCounter].myAnswer);
     }
 }
 
 function nextStatement() {
     if(vraagCounter == subjects.length-1) {
-
+        
         calculatePoints();
 
     }else {
         vraagCounter++;
         document.getElementById('important').checked=false;
         displayVraag();
+        rememberAnswer(subjects[vraagCounter].myAnswer);
     }
 }
 
@@ -67,4 +69,23 @@ function calculatePoints() {
             }
         });
     });
+}
+
+function rememberAnswer(answer) {
+    var question = document.getElementsByClassName('questions');
+    document.getElementById('important').checked = false;
+    
+    for(i = 0; i < question.length; i++) {
+        question[i].style.background='none';
+    }
+
+    if(subjects[vraagCounter].important == true) {
+        document.getElementById('important').checked = true;
+    }
+
+    if(answer == '') {
+        return;
+    }else {
+        document.getElementById(answer).style.backgroundColor='blue';
+    }
 }
