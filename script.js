@@ -2,6 +2,7 @@ var vraagCounter = 0;
 
 subjects.forEach(subject => {
     subject.myAnswer = '';
+    subject.important = false;
 });
 
 parties.forEach(party => {
@@ -23,6 +24,17 @@ function displayVraag() {
     document.getElementById('stellingDes').innerHTML=subjects[vraagCounter].statement;
 }
 
+function previousStatement() {
+    if(vraagCounter == 0) {
+        document.getElementById('homePage').style.display='block';
+        document.getElementById('stellingPage').style.display='none';
+    }else {
+        vraagCounter--;
+        document.getElementById('important').checked=false;
+        displayVraag();
+    }
+}
+
 function nextStatement() {
     if(vraagCounter == subjects.length-1) {
 
@@ -30,33 +42,29 @@ function nextStatement() {
 
     }else {
         vraagCounter++;
-        console.log(subjects[vraagCounter]);
-        displayVraag();
-    }
-}
-
-function previousStatement() {
-    if(vraagCounter == 0) {
-        document.getElementById('homePage').style.display='block';
-        document.getElementById('stellingPage').style.display='none';
-    }else {
-        vraagCounter--;
+        document.getElementById('important').checked=false;
         displayVraag();
     }
 }
 
 function saveAnswer(answer) {
     subjects[vraagCounter].myAnswer=answer;
+    subjects[vraagCounter].important=document.getElementById('important').checked;
     nextStatement();
 }
 
 function calculatePoints() {
     subjects.forEach(subject => {
-        subject.parties.forEach(function(party, partyIndex){
-             if(subject.myAnswer == subject.parties[partyIndex].position){
+        subject.parties.forEach(function(subjectParty, partyIndex){
+            if(subject.myAnswer == subject.parties[partyIndex].position) {
                 var scoreParty = parties.find(party => party.name == subject.parties[partyIndex].name);
-                scoreParty.points += 1;
+                
+                if(subject.important == true) {
+                    scoreParty.points+=2;
+                }else {
+                    subject.important++;
+                }
             }
-        })
-    })
+        });
+    });
 }
