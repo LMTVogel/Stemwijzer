@@ -1,5 +1,8 @@
 var vraagCounter = 0;
 
+var endParties = [];
+var partySize = 10;
+
 subjects.forEach(subject => {
     subject.myAnswer = '';
     subject.important = false;
@@ -64,11 +67,13 @@ function calculatePoints() {
                 if(subject.important == true) {
                     scoreParty.points+=2;
                 }else {
-                    subject.important++;
+                    scoreParty.points+=1;
                 }
             }
         });
     });
+    console.log(parties);
+    displayPartyPage();
 }
 
 function rememberAnswer(answer) {
@@ -88,4 +93,50 @@ function rememberAnswer(answer) {
     }else {
         document.getElementById(answer).style.backgroundColor='blue';
     }
+}
+
+function displayPartyPage() {
+    document.getElementById('stellingPage').style.display='none';
+    document.getElementById('partyPage').style.display='block';
+
+    parties.sort(function(a, b) {
+        return b.points - a.points;
+    });
+
+    parties.forEach(party => {
+        var paragraph = document.createElement('p');
+
+        paragraph.innerHTML = party.name;
+
+        document.getElementById('partyOrder').appendChild(paragraph);
+    });
+}
+
+function getSecularParties() {
+    endParties = [];
+
+    endParties = parties.filter(party => {
+        return party.secular == true;
+    });
+}
+
+function getAllParties() {
+    endParties = [];
+
+    endParties = parties;
+}
+
+function getBigParties() {
+    endParties = [];
+
+    endParties = parties.filter(party => {
+        return party.size >= partySize;
+    });
+}
+
+function finalResultPage() {
+    if(endParties.length == 0) {
+        return alert('Kies uit de drie knoppen');
+    }
+    console.log(endParties);
 }

@@ -142,15 +142,15 @@
                     </div>
                 </section>
              </div>
-             <section id="importantContainer" class="importantContainer">
+             <section id="partyPage" class="partyPage">
                  <h3>Welke partijen wilt u meenemen in het resultaat?</h3>
                  <p>U kunt kiezen voor zittende partijen, die nu in de Tweede Kamer vertegenwoordigd zijn. Daarbij nemen we ook de partijen mee die in de peilingen op minimaal één zetel staan. U kunt alle partijen meenemen en u kunt een eigen selectie maken van tenminste drie partijen.</p>
-                 <button>Naar resultaat gaan</button>
+                 <button onclick="finalResultPage()">Naar resultaat gaan</button>
                  <div id="importantSubjects">
                     <h4>Kies de partijen die u mee wilt nemen in het resultaat</h4>
-                    <button id="secular" class="w3-button w3-round filterParty">Selecteer zittende partijen</button>
-                    <button id="all" class="w3-button w3-round filterParty">Selecteer alle partijen</button>
-                    <button id="big" class="w3-button w3-round filterParty">Selecteer de grote partijen</button>
+                    <button id="secular" class="w3-button w3-round filterParty" onclick="getSecularParties()">Selecteer zittende partijen</button>
+                    <button id="all" class="w3-button w3-round filterParty" onclick="getAllParties()">Selecteer alle partijen</button>
+                    <button id="big" class="w3-button w3-round filterParty" onclick="getBigParties()">Selecteer de grote partijen</button>
                     <div class="w3-row w3-center ">
                         <div class="w3-col s4">
                             <div class="w3-left-align" id='partyOrder'></div>
@@ -172,36 +172,6 @@
                      </div>
                  </div>
              </section>
-             <div id="importantContainer" class="importantContainer">
-                <h3>Welke partijen wilt u meenemen in het resultaat?</h3>
-                <p>U kunt kiezen voor zittende partijen, die nu in de Tweede Kamer vertegenwoordigd zijn. Daarbij nemen we ook de partijen mee die in de peilingen op minimaal één zetel staan. U kunt alle partijen meenemen en u kunt een eigen selectie maken van tenminste drie partijen.</p>
-                <button onclick="">Naar resultaat gaan</button>
-                <div id="importantSubjects">
-                    <h4>Kies de partijen die u mee wilt nemen in het resultaat</h4>
-                    <button id="secular" class="w3-button w3-round filterParty" onclick="">Selecteer zittende partijen</button>
-                    <button id="all" class="w3-button w3-round filterParty" onclick="">Selecteer alle partijen</button>
-                    <button id="big" class="w3-button w3-round filterParty" onclick="">Selecteer de grote partijen</button>
-                    <div class="w3-row w3-center ">
-                        <div class="w3-col s4">
-                            <div class="w3-left-align" id='partyOrder'></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="resultContainer">
-                <h3 class="resultTitle">Resultaat</h3>
-                <div class="placeContainer">
-                    <div class="place">
-                        <h3 id="1stPlace">1. </h3>
-                    </div>
-                    <div class="place">
-                        <h3 id="2ndPlace">2. </h3>
-                    </div>
-                    <div class="place">
-                        <h3 id="3rdPlace">3. </h3>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </body>
