@@ -139,4 +139,11 @@ function finalResultPage() {
         return alert('Kies uit de drie knoppen');
     }
     console.log(endParties);
+
+    document.getElementById('partyPage').style.display='none';
+    document.getElementById('resultContainer').style.display='block';
+
+    document.getElementById('1stPlace').innerHTML+=endParties[0].long;
+    document.getElementById('2ndPlace').innerHTML+=endParties[1].long;
+    document.getElementById('3rdPlace').innerHTML+=endParties[2].long;
 }
