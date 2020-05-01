@@ -118,12 +118,14 @@ function getSecularParties() {
     endParties = parties.filter(party => {
         return party.secular == true;
     });
+    btnFeedback('secular');
 }
 
 function getAllParties() {
     endParties = [];
 
     endParties = parties;
+    btnFeedback('all');
 }
 
 function getBigParties() {
@@ -132,6 +134,17 @@ function getBigParties() {
     endParties = parties.filter(party => {
         return party.size >= partySize;
     });
+    btnFeedback('big');
+}
+
+function btnFeedback(id) {
+    var filterBtnColor = document.getElementsByClassName('filterParty');
+
+    for(i = 0; i < filterBtnColor.length; i++) {
+        filterBtnColor[i].style.background='none';
+    }
+
+    document.getElementById(id).style.background='green';
 }
 
 function finalResultPage() {
