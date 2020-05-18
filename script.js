@@ -80,7 +80,7 @@ function calculatePoints() {
     subjects.forEach(subject => {
         subject.parties.forEach(function(subjectParty, partyIndex){
             if(subject.myAnswer == subject.parties[partyIndex].position) {
-                var scoreParty = parties.find(party => party.name == subject.parties[partyIndex].name);
+                //var scoreParty = parties.find(party => party.name == subject.parties[partyIndex].name);
                 
                 if(subject.important == true) {
                     scoreParty.points+=2;
