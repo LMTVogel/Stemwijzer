@@ -77,15 +77,17 @@ function rememberAnswer(answer) {
 }
 // Berekent de punten van de gekozen antwoorden om zo te kijken wat de partij uitkomst is.
 function calculatePoints() {
-    subjects.forEach(subject => {
-        subject.parties.forEach(function(subjectParty, partyIndex){
-            if(subject.myAnswer == subject.parties[partyIndex].position) {
-                //var scoreParty = parties.find(party => party.name == subject.parties[partyIndex].name);
-                
-                if(subject.important == true) {
-                    scoreParty.points+=2;
-                }else {
-                    scoreParty.points+=1;
+    subjects.forEach((subject) => {
+        subject.parties.forEach(function (subjectParty, partyIndex) {
+            if (subject.myAnswer == subject.parties[partyIndex].position) {
+                for (let index = 0; index < parties.length; index++) {
+                    if (subject.parties[partyIndex].name == parties[index].name) {
+                        if (subject.important == true) {
+                            parties[index].points += 2;
+                        } else {
+                            parties[index].points += 1;
+                        }
+                    }
                 }
             }
         });
