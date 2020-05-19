@@ -80,10 +80,14 @@ function calculatePoints() {
     subjects.forEach((subject) => {
         subject.parties.forEach(function (subjectParty, partyIndex) {
             if (subject.myAnswer == subject.parties[partyIndex].position) {
+                // Loopt door de parties heen en kijkt of de naam van de partij met de naam van het antwoord overeenkomt met de gebruikers gekozen antwoord. Dit moet worden gedaan omdat anders er een punt aan de eerste de beste partij word toegevoegd.
                 for (let index = 0; index < parties.length; index++) {
+                    // Kijkt of de naam van de gemaakte keuze overeenkomt met de keuzes van de partijen.
                     if (subject.parties[partyIndex].name == parties[index].name) {
+                        // Voegt 2 punten toe aan de overeenkomende partijen als de checkbox is aangevinkt.
                         if (subject.important == true) {
                             parties[index].points += 2;
+                        // Voegt 1 punt toe aan de overeenkomende partijen als de chekcbox niet is aangevinkt.
                         } else {
                             parties[index].points += 1;
                         }
